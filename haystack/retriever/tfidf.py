@@ -44,7 +44,8 @@ class TfidfRetriever(BaseRetriever):
         
         #this returns a list of objects of type document
         documents = self.document_store.get_all_documents()
-
+        
+        # doc.id is the hash value generated and p_id is just the paragraph number in sequnce from top
         paragraphs = []
         p_id = 0
         for doc in documents:
