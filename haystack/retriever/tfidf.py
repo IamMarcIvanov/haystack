@@ -33,7 +33,7 @@ class TfidfRetriever(BaseRetriever):
         )
 
         self.document_store = document_store
-        self.paragraphs = self._get_all_paragraphs()
+        self.paragraphs = self._get_all_paragraphs() # this is a list each of whose elements is a named tuple with doc id, p id, text and meta
         self.df = None
         self.fit()
 
