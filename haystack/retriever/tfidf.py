@@ -103,6 +103,6 @@ class TfidfRetriever(BaseRetriever):
         return documents
 
     def fit(self):
-        self.df = pd.DataFrame.from_dict(self.paragraphs)
-        self.df["text"] = self.df["text"].apply(lambda x: " ".join(x))
+        self.df = pd.DataFrame.from_dict(self.paragraphs) # the FACT that paragraphs is a list does not create problems. It just takes the named tuple names as column names
+        self.df["text"] = self.df["text"].apply(lambda x: " ".join(x)) # this for some reason adds spaces between each character and double spaces between words
         self.tfidf_matrix = self.vectorizer.fit_transform(self.df["text"])
