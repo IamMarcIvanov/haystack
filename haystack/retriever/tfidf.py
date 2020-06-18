@@ -105,4 +105,4 @@ class TfidfRetriever(BaseRetriever):
     def fit(self):
         self.df = pd.DataFrame.from_dict(self.paragraphs) # the FACT that paragraphs is a list does not create problems. It just takes the named tuple names as column names
         self.df["text"] = self.df["text"].apply(lambda x: " ".join(x)) # this for some reason adds spaces between each character and double spaces between words
-        self.tfidf_matrix = self.vectorizer.fit_transform(self.df["text"])
+        self.tfidf_matrix = self.vectorizer.fit_transform(self.df["text"]) # thiis creates a matrix with letters due to the split above WHY WHY WHY???
