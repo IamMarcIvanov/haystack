@@ -41,6 +41,8 @@ class TfidfRetriever(BaseRetriever):
         """
         Split the list of documents in paragraphs
         """
+        
+        #this returns a list of objects of type document
         documents = self.document_store.get_all_documents()
 
         paragraphs = []
